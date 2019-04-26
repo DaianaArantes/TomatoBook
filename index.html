@@ -1,0 +1,251 @@
+<!--
+ * File Name: index.html
+ * Revision History:
+ * Daiana Arantes, 2019-04-27 : Created
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>DA Final Project</title>
+
+</head>
+<body>
+
+<!--page 1-->
+<div id="daHomePage" data-role="page">
+    <header data-role="header" data-theme="b" data-position="fixed">
+        <h1>Tomatoes Book</h1>
+        <div data-role="navbar" data-iconpos="top">
+            <ul>
+                <li><a href="#daHomePage" data-icon="home" class="ui-btn-active ui-state-persist">Home</a></li>
+                <li><a href="#daAddTomatoPage" data-icon="plus" class="ui-btn-a">Add</a></li>
+                <li><a href="#daViewAllTomatoesPage" data-icon="grid" class="ui-btn-a">Tomatoes</a></li>
+                <li><a href="#daAboutPage" data-icon="gear" class="ui-btn-a">About</a></li>
+            </ul>
+        </div>
+    </header>
+    <section data-role="content">
+
+        <h1>Register a Tomato!</h1>
+        <p>Welcome to the Tomatoes Book! This App is for you to keep track of species of tomatoes. Here you can register
+            a
+            new tomato that you found and collect all different species that exists and show it to your friends! Have
+            fun!</p>
+        <p align="center">
+            <img src="img/home-icon.png" width="60%" height="60%" alt="butterfly icon">
+        </p>
+        <p>Please feel free to contact me if you have any suggestions!</p>
+        <a href="#" data-role="button" data-rel="phone" data-icon="plus">Call: 519.748.5220</a>
+        <a href="#" data-role="button" data-rel="email" data-icon="plus">darantes@conestogac.on.ca</a>
+        <p>Website:</p>
+        <a href="#" data-role="button" data-rel="website" data-icon="plus">Tomato Website</a>
+    </section>
+    <footer data-role="footer" data-theme="b" data-position="fixed">
+        <h1>&copy; 2019 Daiana Arantes</h1>
+    </footer>
+</div>
+
+<!--page 2-->
+<div id="daAddTomatoPage" data-role="page">
+    <header data-role="header" data-theme="b" data-position="fixed">
+        <h1>Add a Tomato</h1>
+        <div data-role="navbar" data-iconpos="top">
+            <ul>
+                <li><a href="#daHomePage" data-icon="home" class="ui-btn-a">Home</a></li>
+                <li><a href="#daAddTomatoPage" data-icon="plus" class="ui-btn-active ui-state-persist">Add</a></li>
+                <li><a href="#daViewAllTomatoesPage" data-icon="grid" class="ui-btn-a">Tomatoes</a></li>
+                <li><a href="#daAboutPage" data-icon="gear" class="ui-btn-a">About</a></li>
+            </ul>
+        </div>
+    </header>
+    <section data-role="content">
+        <form action="#" id="daAddForm">
+            <label>Common Name:</label>
+            <input type="text" id="daAddTomatoName" name="daAddTomatoName">
+            <label>Scientific Name:</label>
+            <input type="text" id="daAddScientificName" name="daAddScientificName">
+            <label>Size:</label>
+            <fieldset data-role="controlgroup" data-type="horizontal">
+                <input type="radio" id="daRadSmallAdd" name="daRadSizeAdd" value="Small" checked="checked">
+                <label for="daRadSmallAdd">Small</label>
+                <input type="radio" id="daRadMediumAdd" value="Medium" name="daRadSizeAdd">
+                <label for="daRadMediumAdd">Medium</label>
+                <input type="radio" id="daRadLargeAdd" value="Large" name="daRadSizeAdd">
+                <label for="daRadLargeAdd">Large</label>
+            </fieldset>
+            <label>Select a Shape:</label>
+            <select id="daAddShape" name="daAddShape">
+
+            </select>
+            <label>Color:</label>
+            <input type="text" id="daAddColor" name="daAddColor">
+            <label>Additional Info:</label>
+            <textarea id="daAddAdditionalInfo" name="daAddAdditionalInfo"></textarea>
+            <label>Found Date:</label>
+            <input type="date" id="daAddDate" name="daAddDate">
+            <label>Photo:</label>
+            <fieldset data-role="controlgroup" data-type="horizontal">
+                <button type="button" id="btnCaptureAdd"
+                        name="btnCaptureAdd">
+                    Capture photo
+                </button>
+                <button type="button" id="btnLoadFromLibraryAdd"
+                        name="btnLoadFromLibraryAdd">
+                    Load from library
+                </button>
+                <br>
+                <img id="imgFile" src="" width="100%" height="100%" alt="tomato photo" hidden="hidden">
+                <input type="hidden" id="imageData">
+            </fieldset>
+        </form>
+        <button data-inline="true" id="daBtnSave" name="daBtnSave" class="ui-btn-active">Save</button>
+    </section>
+    <footer data-role="footer" data-theme="b" data-position="fixed">
+        <h1>&copy; 2019 Daiana Arantes</h1>
+    </footer>
+</div>
+
+<!--page 3-->
+<div id="daViewAllTomatoesPage" data-role="page">
+    <header data-role="header" data-theme="b" data-position="fixed">
+        <h1>List of Tomatoes</h1>
+        <div data-role="navbar" data-iconpos="top">
+            <ul>
+                <li><a href="#daHomePage" data-icon="home" class="ui-btn-a">Home</a></li>
+                <li><a href="#daAddTomatoPage" data-icon="plus" class="ui-btn-a">Add</a></li>
+                <li><a href="#daViewAllTomatoesPage" data-icon="grid"
+                       class="ui-btn-active ui-state-persist">Tomatoes</a></li>
+                <li><a href="#daAboutPage" data-icon="gear" class="ui-btn-a">About</a></li>
+            </ul>
+        </div>
+    </header>
+    <section data-role="content">
+        <ul id="daTomatoList" data-role="listview" class="ui-listview-inset" data-icon="false">
+        </ul>
+    </section>
+    <footer data-role="footer" data-theme="b" data-position="fixed">
+        <h1>&copy; 2019 Daiana Arantes</h1>
+    </footer>
+</div>
+
+<!--page 4-->
+<div id="daEditTomatoPage" data-role="page">
+    <header data-role="header" data-theme="b" data-position="fixed">
+        <h1>Edit a Tomato</h1>
+        <div data-role="navbar" data-iconpos="top">
+            <ul>
+                <li><a href="#daHomePage" data-icon="home" class="ui-btn-a">Home</a></li>
+                <li><a href="#daAddTomatoPage" data-icon="plus" class="ui-btn-a">Add</a></li>
+                <li><a href="#daViewAllTomatoesPage" data-icon="grid"
+                       class="ui-btn-active ui-state-persist">Tomatoes</a></li>
+                <li><a href="#daAboutPage" data-icon="gear" class="ui-btn-a">About</a></li>
+            </ul>
+        </div>
+    </header>
+    <section data-role="content">
+        <form action="#" id="daEditForm">
+            <label>Common Name:</label>
+            <input type="text" id="daEditTomatoName" name="daEditTomatoName">
+            <label>Scientific Name:</label>
+            <input type="text" id="daEditScientificName" name="daEditScientificName">
+            <label>Size:</label>
+            <fieldset data-role="controlgroup" data-type="horizontal">
+                <input type="radio" id="daRadSmallEdit" value="Small" name="daRadSizeEdit">
+                <label for="daRadSmallEdit">Small</label>
+                <input type="radio" id="daRadMediumEdit" value="Medium" name="daRadSizeEdit">
+                <label for="daRadMediumEdit">Medium</label>
+                <input type="radio" id="daRadLargeEdit" value="Large" name="daRadSizeEdit">
+                <label for="daRadLargeEdit">Large</label>
+            </fieldset>
+            <label>Select a Shape:</label>
+            <select id="daEditShape" name="daEditShape">
+                <option value="Cocktail" selected>Cocktail</option>
+                <option value="Standard">Standard</option>
+                <option value="Beefsteak">Beefsteak</option>
+                <option value="Round">Round</option>
+                <option value="Flattened Globe">Flattened Globe</option>
+                <option value="Pear">Pear</option>
+            </select>
+            <label>Color:</label>
+            <input type="text" id="daEditColor" name="daEditColor">
+            <label>Additional Info:</label>
+            <textarea id="daEditAdditionalInfo" name="daEditAdditionalInfo"></textarea>
+            <label>Found Date:</label>
+            <input type="date" id="daEditDate" name="daEditDate">
+            <label>Photo:</label>
+            <fieldset data-role="controlgroup" data-type="horizontal">
+                <button type="button" id="btnCaptureEdit"
+                        name="btnCaptureEdit">
+                    Capture photo
+                </button>
+                <button type="button" id="btnLoadFromLibraryEdit"
+                        name="btnLoadFromLibraryEdit">
+                    Load from library
+                </button>
+                <img id="imgFileEdit" src="" width="100%" height="100%" alt="tomato photo" hidden="hidden">
+                <input type="hidden" id="imageDataEdit">
+            </fieldset>
+        </form>
+        <div data-role="controlgroup" data-type="horizontal">
+            <button data-inline="true" id="daBtnCancel" name="daBtnCancel" STYLE="background-color: yellow">Cancel
+            </button>
+            <button data-inline="true" id="daBtnDelete" name="daBtnDelete" data-theme="b">Delete</button>
+            <button data-inline="true" id="daBtnUpdate" name="daBtnUpdate" class="ui-btn-active">Update</button>
+        </div>
+    </section>
+    <footer data-role="footer" data-theme="b" data-position="fixed">
+        <h1>&copy; 2019 Daiana Arantes</h1>
+    </footer>
+</div>
+
+<!--page 5-->
+<div id="daAboutPage" data-role="page">
+    <header data-role="header" data-theme="b" data-position="fixed">
+        <h1>About</h1>
+        <div data-role="navbar" data-iconpos="top">
+            <ul>
+                <li><a href="#daHomePage" data-icon="home" class="ui-btn-a">Home</a></li>
+                <li><a href="#daAddTomatoPage" data-icon="plus" class="ui-btn-a">Add</a></li>
+                <li><a href="#daViewAllTomatoesPage" data-icon="grid" class="ui-btn-a">Tomatoes</a></li>
+                <li><a href="#daAboutPage" data-icon="gear" class="ui-btn-active ui-state-persist">About</a></li>
+            </ul>
+        </div>
+    </header>
+    <section data-role="content">
+        <div align="center" style="color: darkgreen; font-size: 30px">
+            <h1>About</h1>
+            <p>Written By: Daiana Arantes</p>
+            <p>Programming: Mobile Application Course</p>
+            <p>April 2019</p>
+        </div>
+
+
+    </section>
+    <footer data-role="footer" data-theme="b" data-position="fixed">
+        <h1>&copy; 2019 Daiana Arantes</h1>
+    </footer>
+</div>
+</body>
+</html>
+
+<!--jQuery-->
+<script src="js/lib/jquery-2.1.4.js"></script>
+<!--jQuery mobile-->
+<script src="js/lib/jquery.mobile-1.4.5.js"></script>
+<!--JQuery Validate-->
+<script src="js/lib/jquery.validate.js"></script>
+<!--jQuery mobile css-->
+<link rel="stylesheet" type="text/css" href="css/lib/jquery.mobile-1.4.5.css">
+<link rel="stylesheet" type="text/css" href="css/DAmystyle.css">
+
+<!--my scripts-->
+<script src="js/DAdatabase.js"></script>
+<script src="js/DAtomatoDAL.js"></script>
+<script src="js/DAfacade.js"></script>
+<script src="js/DAutil.js"></script>
+<script src="js/DAglobal.js"></script>
+<script src="cordova.js"></script>
+<script src="js/DAcamera.js"></script>
