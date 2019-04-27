@@ -1,7 +1,7 @@
 /**
  * File Name: DAutil.js
  * Revision History:
- * Daiana Arantes, 2019-04-28 : Created
+ * Daiana Arantes, 2019-04-26 : Created
  */
 
 function daValidate_daAddForm(){

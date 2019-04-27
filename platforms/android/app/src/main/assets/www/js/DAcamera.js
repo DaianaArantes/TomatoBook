@@ -1,7 +1,7 @@
 /**
  * File Name: DAcamera.js
  * Revision History:
- * Daiana Arantes, 2019-04-06 : Created
+ * Daiana Arantes, 2019-04-26 : Created
  */
 function DAcapturePhoto() {
     var options = {
